@@ -1,0 +1,11 @@
+<body>
+<header class="py-3 border-bottom">
+    <nav class="hstack gap-3 justify-content-center">
+        <a href="/" class="btn <%= path === '/' ? 'btn-primary' : 'btn-outline-primary' %>">Home</a>
+        <a href="/products" class="btn <%= path === '/products' ? 'btn-primary' : 'btn-outline-primary' %>">Products</a>
+        <a href="/cart" class="btn <%= path === '/cart' ? 'btn-primary' : 'btn-outline-primary' %>">Cart</a>
+        <a href="/orders" class="btn <%= path === '/orders' ? 'btn-primary' : 'btn-outline-primary' %>">Orders</a>
+        <a href="/admin/add-product" class="btn <%= path === '/admin/add-product' ? 'btn-primary' : 'btn-outline-primary' %>">Add Product</a>
+        <a href="/admin/products" class="btn <%= path === '/admin/products' ? 'btn-primary' : 'btn-outline-primary' %>">Admin Products</a>
+    </nav>
+</header>

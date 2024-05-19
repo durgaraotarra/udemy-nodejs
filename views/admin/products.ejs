@@ -1,0 +1,37 @@
+<%- include('../includes/head.ejs') %>
+</head>
+    <%- include('../includes/navigation.ejs') %>
+    <section class="py-5">
+        <div class="container">
+            <% if (prods.length > 0) { %>
+                <div class="row g-3">
+                    <% for (let product of prods) { %>
+                    <div class="col-12 col-lg-4 col-xl-3">
+                        <div class="card">
+                            <img src="<%= product.imageUrl %>" alt="<%= product.title %>" class="card-img-top" />
+                            <hr />
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><%= product.title %></h5>
+                                <h4>$<%= product.price %></h4>
+                                <p class="card-text"><%= product.description %></p>
+                                <div class="hstack gap-3 justify-content-center">
+                                    <a href="/admin/edit-product" class="btn btn-outline-primary">Edit</a>
+                                    <form action="/admin/delete-product" method="POST">
+                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+            <% } else { %>
+                <div class="row">
+                    <div class="col-12">
+                        <h1>No Products...</h1>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </section>
+<%- include('../includes/end.ejs') %>
